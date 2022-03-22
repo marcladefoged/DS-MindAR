@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image-aframe.prod.js"></script>
+    <script src="ds-mindar.js"></script>
+  </head>
+  <body>
+
+      <button id="example-claim-button">Claim Reward</button>
+      
+    <a-scene mindar-image="imageTargetSrc: assets/alltargets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <a-assets>
+        <img id="prize" src="assets/prize.png" />
+      </a-assets>
+
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+      <a-entity id="example-target1" mindar-image-target="targetIndex: 0">
+        <a-plane src="#prize" position="0 0 0" height="1" width="1" rotation="0 0 0"></a-plane>
+      </a-entity>
+      <a-entity id="example-target2" mindar-image-target="targetIndex: 1">
+        <a-plane src="#prize" position="0 0 0" height="1" width="1" rotation="0 0 0"></a-plane>
+      </a-entity>
+      <a-entity id="example-target3" mindar-image-target="targetIndex: 2">
+        <a-plane src="#prize" position="0 0 0" height="1" width="1" rotation="0 0 0"></a-plane>
+      </a-entity>
+
+    </a-scene>
+
+    <style>
+      #example-claim-button {
+        z-index: 1000;
+        height: 120px;
+        width: 200px;
+        border-color: gold;
+        position:relative;
+        left:25%;
+        bottom:5%;
+        top:80%; 
+        background-color: red;
+        color: white;
+        border-radius: 10%;
+        font-size: 2.4rem;
+        font-weight: 800;
+        display: none;
+        
+      }
+
+      .show {
+        display: block !important;
+      }
+    </style>
+  </body>
+</html>
